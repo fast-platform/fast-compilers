@@ -12,8 +12,9 @@ RUN apk add --update --no-cache curl nodejs nodejs-npm git wine gradle xvfb alpi
   && cordova build android \
   && rm -rf /tmp/dummy
 
-RUN npm install -g quasar-cli@0.6.5
+RUN npm install -g quasar-cli
 
+ADD build.sh /root/script.sh
 #RUN npm install -g cypress
 RUN mkdir /tmp/app
 
